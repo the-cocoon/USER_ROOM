@@ -14,6 +14,6 @@
 #= require crop_tool/crop_tool
 #= require crop_tool/jcrop/jquery.Jcrop
 #= require ../avatar_crop
-#= require _open_cook/section-switcher
+#= require ./section-switcher
 
 #= require ./application_initializer

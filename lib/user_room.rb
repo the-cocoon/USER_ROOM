@@ -1,31 +1,34 @@
 require 'user_room/version'
 
-[
-  'devise',
-  'omniauth-twitter',
-  'omniauth-facebook',
-  'omniauth-vkontakte',
-  'omniauth-google-oauth2',
-  'omniauth-odnoklassniki',
+%w[
+  devise
+  omniauth-twitter
+  omniauth-facebook
+  omniauth-vkontakte
+  omniauth-google-oauth2
+  omniauth-odnoklassniki
 
-  'slim',
-  'haml',
-  'rails_config',
+  slim
+  config
 
-  'pagination',
-  'simple_sort',
-  'to_slug_param',
+  pagination
+  simple_sort
+  to_slug_param
+  premailer-rails
 
-  'mini_magick',
-  'paperclip',
-  'image_tools',
-  'crop_tool',
+  mini_magick
+  paperclip
 
-  'log_js',
-  'role_slim_js',
-  'protozaur',
-  'protozaur_theme',
-  'table_holy_grail_layout',
+  image_tools
+  crop_tool
+
+  log_js
+  role_slim_js
+  notifications
+
+  protozaur
+  protozaur_theme
+  table_holy_grail_layout
 ].each { |gem_name| require gem_name }
 
 module UserRoom

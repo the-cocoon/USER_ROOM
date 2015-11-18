@@ -8,7 +8,7 @@
     @registration-accordion--switcher
       input#accounted-off-always.radio-btn(type='checkbox' autocomplete='off')
       label(for='accounted-off')
-        span.fs16 У меня уже есть учетная запись на OPEN-COOK.RU
+        span.fs16 У меня уже есть учетная запись
 
   @registration-accordion--content(style=content_visible)
     .table.w100p
@@ -32,17 +32,13 @@
                 .mb15.clearfix.mb0
                   = f.check_box :remember_me, { checked: true, autocomplete: :off }
                   ' &nbsp;
-                  span.fs13= t('devise.sessions.remember_me')
+                  span.fs13 Запомнить меня
 
               .pull-left.mr20.mb5
-                = f.submit t('devise.sessions.login'), class: 'ptz--btn ptz--size-14 ptz--style-0--btn w100'
+                = f.submit "Войти", class: 'ptz--btn ptz--size-14 ptz--style-0--btn w100'
 
         .cell.w50p.pl30
           p.mt0 Подсказка:
           p.fs14.mt0.mb10 &mdash; <span class='b'>Забыли пароль?</span> Запросите одноразовую ссылку для входа ниже.
           p.fs14.mt0.mb10 &mdash; После входа пароль можно сменить в личном кабинете
           p.fs14.mt0.mb10 &mdash; Особенно удобно пользоваться входом через социальные сети
-
-  / .cell.pl0.pt10.pr10.w40
-  /   input#accounted-on-always.radio-btn(type='checkbox' checked='checked' autocomplete='off')
-  /   label(for='accounted-on')
