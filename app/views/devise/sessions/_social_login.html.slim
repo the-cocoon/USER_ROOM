@@ -1,8 +1,8 @@
 - intro_visible   = 'display:none' if  visible
 - content_visible = 'display:none' if !visible
-- gray_style = 'form-classic--lightgray-theme' if !visible
+- visible_style   = 'disable'      if !visible
 
-.form-classic@registration-accordion(class=gray_style)
+.ptz--theme-0--div-0@registration-accordion(class=visible_style)
   @registration-accordion--intro(style=intro_visible)
 
     @registration-accordion--switcher

@@ -14,7 +14,7 @@ require 'user_room/version'
   pagination
   simple_sort
   to_slug_param
-  premailer-rails
+  premailer/rails
 
   mini_magick
   paperclip

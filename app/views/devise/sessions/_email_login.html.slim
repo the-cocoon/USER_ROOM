@@ -1,8 +1,8 @@
 - intro_visible   = 'display:none' if  visible
 - content_visible = 'display:none' if !visible
-- gray_style = 'form-classic--lightgray-theme' if !visible
+- visible_style   = 'disable'      if !visible
 
-.form-classic@registration-accordion(class=gray_style)
+.ptz--theme-0--div-0@registration-accordion(class=visible_style)
   @registration-accordion--intro(style=intro_visible)
 
     @registration-accordion--switcher
@@ -35,7 +35,7 @@
                   span.fs13 Запомнить меня
 
               .pull-left.mr20.mb5
-                = f.submit "Войти", class: 'ptz--btn ptz--size-14 ptz--style-0--btn w100'
+                = f.submit "Войти", class: 'ptz--btn ptz--size-14 ptz--theme-0--btn w100'
 
         .cell.w50p.pl30
           p.mt0 Подсказка:

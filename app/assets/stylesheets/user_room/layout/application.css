@@ -7,10 +7,10 @@
   #= require ptz/inputs-buttons/sizes
   #= require ptz/inputs-buttons/icons
 
-  #= require protozaur_theme/theme-0/table-light
-  #= require protozaur_theme/theme-0/styles
-  #= require protozaur_theme/theme-0/paginator
-  #= require protozaur_theme/theme-0/radio-buttons
+  #= require protozaur_theme/theme-0/divs
+  #= require protozaur_theme/theme-0/radios
+  #= require protozaur_theme/theme-0/buttons
+  #= require protozaur_theme/theme-0/paginators
 
   #= require notifications/vendors/toastr
 
@@ -21,8 +21,8 @@
 
   #= require ../social-login-btn
   #= require ./notifications
-  #= require ./user-room
   #= require ./user-room-header
+  #= require ./user-room--header-footer.css.sass
 
   #= require ./section-switcher
 */

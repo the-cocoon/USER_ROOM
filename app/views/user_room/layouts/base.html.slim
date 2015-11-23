@@ -21,6 +21,8 @@ html(lang='en')
   body
     / TLAYOUT
     .table.tlayout
+
+      / HEADER
       - if content_for :header
         header.row
           .cell
@@ -31,6 +33,7 @@ html(lang='en')
                 .content-holder-spacer
                   .header= yield :header
 
+      / MAIN
       main.row
         .cell
 
@@ -44,7 +47,7 @@ html(lang='en')
                 aside.cell.left
                   .left-sidebar= yield :left_sidebar
 
-              / MAIN
+              / NESTED MAIN
               .cell.main
                 / TCONETNT
                 .table.tcontent
@@ -69,6 +72,7 @@ html(lang='en')
 
               .cell.right-spacer
 
+      / FOOTER
       - if content_for :footer
         footer.row
           .cell

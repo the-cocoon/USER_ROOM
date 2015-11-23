@@ -1,8 +1,8 @@
 - intro_visible   = 'display:none' if  visible
 - content_visible = 'display:none' if !visible
-- gray_style = 'form-classic--lightgray-theme' if !visible
+- visible_style   = 'disable'      if !visible
 
-.form-classic@registration-accordion(class=gray_style)
+.ptz--theme-0--div-0@registration-accordion(class=visible_style)
   @registration-accordion--intro(style=intro_visible)
 
     @registration-accordion--switcher
@@ -25,7 +25,7 @@
                 .block.fs14.lh120.mb10 Ваша электронная почта
 
                 = text_field_tag :email, '', class: 'ptz--input ptz--size-14 w250'
-                = button_tag 'Получить ссылку', class: 'ptz--btn ptz--size-14 ptz--style-0--btn ptz--btn--side-right'
+                = button_tag 'Получить ссылку', class: 'ptz--btn ptz--size-14 ptz--theme-0--btn ptz--btn--side-right'
 
         .cell.w50p.pl30
           p.mt0 Подсказка:

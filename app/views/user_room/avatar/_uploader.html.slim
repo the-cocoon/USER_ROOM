@@ -1,5 +1,5 @@
 - if object.avatar.blank?
-  = form_for object, html: { enctype: 'multipart/form-data', class: 'form-classic' } do |f|
+  = form_for object, html: { enctype: 'multipart/form-data', class: 'ptz--theme-0--div-0' } do |f|
     = render partial: 'notifications/form', locals: { object: object, format: :json }
 
     .mb15
@@ -8,7 +8,7 @@
     .mb15
       = f.file_field :avatar, class: 'ptz--input ptz--size-12'
 
-    .form-classic--actions
+    .ptz--theme-0--div-0--actions
       = f.submit 'Загрузить', class: 'ptz--btn ptz--size-14'
 
 - else

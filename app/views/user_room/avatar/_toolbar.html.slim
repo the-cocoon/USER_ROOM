@@ -11,7 +11,7 @@ ruby:
     callback_handler: "AvatarCrop.crop_tool_callback"
   }
 
-= form_for object, html: { enctype: 'multipart/form-data', class: 'form-classic' } do |f|
+= form_for object, html: { enctype: 'multipart/form-data', class: 'ptz--theme-0--div-0' } do |f|
   .mb15.fs16.b Изменить аватар
 
   = render partial: 'notifications/form', locals: { object: object, format: :json }

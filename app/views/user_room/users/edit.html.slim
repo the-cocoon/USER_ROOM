@@ -10,7 +10,7 @@
   = render partial: 'user_room/avatar/uploader', locals: { object: @user }
   = render partial: 'notifications/form', locals: { object: @user }
 
-  = form_for @user, html: { class: 'form-classic' } do |f|
+  = form_for @user, html: { class: 'ptz--theme-0--div-0' } do |f|
     h3.mb15.fs16.b Основная информация
 
     .table.w100p
@@ -42,11 +42,11 @@
               .block.fs14.lh120.mb10 Email ожидает подтверждения:
               .b.mt15.fs15= @user.unconfirmed_email
 
-    .form-classic--actions.mt20
+    .ptz--theme-0--div-0--actions.mt20
       = f.submit "Обновить профиль", class: 'ptz--btn ptz--size-14'
 
 
-  = form_for @user, html: { class: 'form-classic' } do |f|
+  = form_for @user, html: { class: 'ptz--theme-0--div-0' } do |f|
     h3.mb15.fs16.b Сменить пароль
 
     .mb15
@@ -57,10 +57,10 @@
       = f.label :password_confirmation, "Пароль еще раз", class: 'block fs14 lh120 mb5 '
       = f.text_field :password_confirmation, class: 'ptz--input w150'
 
-    .form-classic--actions.mt20
+    .ptz--theme-0--div-0--actions.mt20
       = f.submit "Сменить пароль", class: 'ptz--btn ptz--size-14'
 
-  = form_for @user, html: { class: 'form-classic' } do |f|
+  = form_for @user, html: { class: 'ptz--theme-0--div-0' } do |f|
     h3.mb15.fs16.b Ваши контакты в социальных сетях
 
     .table.w100p
@@ -94,13 +94,13 @@
             = f.label :pt_addr, "pinterest.com", class: 'block fs14 lh120 mb5 '
             = f.text_field :pt_addr, class: 'ptz--input w90p'
 
-    .form-classic--actions.mt20
+    .ptz--theme-0--div-0--actions.mt20
       = f.submit "Обновить контакты", class: 'ptz--btn ptz--size-14'
 
   - credentials = @user.credentials
   - available_to_unlink = @user.credentials.count > 1
 
-  .form-classic.mb15
+  .ptz--theme-0--div-0.mb15
     h3.mb15.fs16.b Привязать учетную запись к социальной сети
 
     .table.mt40.mb40
