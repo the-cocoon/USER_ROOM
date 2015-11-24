@@ -1,7 +1,5 @@
 - if object.avatar.blank?
   = form_for object, html: { enctype: 'multipart/form-data', class: 'ptz--theme-0--div-0' } do |f|
-    = render partial: 'notifications/form', locals: { object: object, format: :json }
-
     .mb15
       .block.fs14.lh120.mb10 Загрузите главное изображение
 

@@ -1,14 +1,16 @@
+- content_for :title do
+  | Редактировать профиль
+
 = render partial: 'user_room/users/header_footer'
 
 - content_for :left_sidebar do
   = render partial: 'user_room/users/left_sidebar'
 
 .m15
+  = render partial: 'notifications/form', locals: { object: @user, format: :json }
 
   h3.fs20 Редактирование профиля
-
   = render partial: 'user_room/avatar/uploader', locals: { object: @user }
-  = render partial: 'notifications/form', locals: { object: @user }
 
   = form_for @user, html: { class: 'ptz--theme-0--div-0' } do |f|
     h3.mb15.fs16.b Основная информация
@@ -48,14 +50,14 @@
 
   = form_for @user, html: { class: 'ptz--theme-0--div-0' } do |f|
     h3.mb15.fs16.b Сменить пароль
+    .clearfix.mb15
+      .pull-left.mr25
+        = f.label :password, "Пароль", class: 'block fs14 lh120 mb5 '
+        = f.text_field :password, class: 'ptz--input w200'
 
-    .mb15
-      = f.label :password, "Пароль", class: 'block fs14 lh120 mb5 '
-      = f.text_field :password, class: 'ptz--input w150'
-
-    .mb15
-      = f.label :password_confirmation, "Пароль еще раз", class: 'block fs14 lh120 mb5 '
-      = f.text_field :password_confirmation, class: 'ptz--input w150'
+      .pull-left
+        = f.label :password_confirmation, "Пароль еще раз", class: 'block fs14 lh120 mb5 '
+        = f.text_field :password_confirmation, class: 'ptz--input w200'
 
     .ptz--theme-0--div-0--actions.mt20
       = f.submit "Сменить пароль", class: 'ptz--btn ptz--size-14'
