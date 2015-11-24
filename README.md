@@ -111,6 +111,14 @@ end
 `rails g controller users --skip-routes --test-framework=false --helper=false --assets=false`
 
 ```
+class ApplicationController < ActionController::Base
+  include ::UserRoom::ApplicationController
+
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
+end
+
 class UsersController < ApplicationController
   include ::UserRoom::UsersController
 
@@ -223,6 +231,7 @@ end
 mailer:
   service: smtp
   host: 'localhost:3000'
+  admin_email: 'admin@blog.com'
 
   sandmail:
     location:  '/usr/sbin/sendmail'
@@ -302,4 +311,16 @@ end
 
 ```rb
 = yield
+```
+
+# 10
+
+`config/initializers/premailer_rails.rb`
+
+```rb
+Premailer::Rails.config.merge!(
+  preserve_styles: true,
+  remove_classes: true,
+  remove_ids: true
+)
 ```
