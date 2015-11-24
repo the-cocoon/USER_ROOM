@@ -1,0 +1,11 @@
+.table.100p
+  .row
+    .cell.p10.vam
+      .app--logo.fs18
+        = link_to 'Logo', root_path
+
+    .cell.w100p.p10.tac.vam
+      .app--title.fs24 Hakushu.io
+    .cell.p10.vam
+      .mb10= link_to 'Login', new_user_session_path, class: 'ptz--btn ptz--size-12'
+      = link_to 'Registration', new_user_registration_path, class: 'ptz--btn ptz--size-12'

@@ -1,25 +1,18 @@
-.letter--header.tac.arial.p15.fs20= @subject
+- content_for :title
+  = @subject
 
-.letter--body.m20.tal.arial
+.m20
+  .mb50.fs16.lh130.ffa Здравствуйте! Для входа на сайт воспользуйтесь следующей ссылкой:
 
-  .letter-body--text.mb15
-    | Для входа на сайт
-    '
-    = link_to 'OPEN-COOK.RU', 'http://open-cook.ru', class: 'letter-link fs16 arial'
-    '
-    span.nobr "Открытая кухня Анны Нечаевой"
-    '
-    ' воспользуйтесь следующей ссылкой:
-
-  .letter-body--activation.tac
+  .mb50.tac
     table.w100p
       tr
         td.w50p
         td
-          .letter-body--activation-border
-            span.nobr= link_to 'Войти на сайт OPEN-COOK.RU', activate_onetime_login_link_url(@uid, callback_path: @callback_path), class: 'letter-body--activation-link'
+          .user-room-mailer--activation-btn-border
+            = link_to 'Войти на сайт', activate_onetime_login_link_url(@uid, callback_path: @callback_path), class: 'user-room-mailer--activation-btn p20 block nobr'
         td.w50p
 
-  .letter-body--text.mt20.mb15 Если ссылка не активна, то скопируйте следующий адрес в адресную строку своего браузера:
-
-  .letter-body--plain-activation= activate_onetime_login_link_url(@uid, callback_path: @callback_path)
+  .mb15.fs16.lh130.ffa Если ссылка не активна, то скопируйте следующий адрес в адресную строку своего браузера:
+  .user-room-mailer--activation-text.p20.tac.fs12
+    = activate_onetime_login_link_url(@uid, callback_path: @callback_path)

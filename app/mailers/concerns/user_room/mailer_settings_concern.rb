@@ -9,9 +9,11 @@ module UserRoom
       end
 
       # SomeMailer.test_mail.delivery_method.settings
+      #
       if smtp?
-        default bcc: 'admin@open-cook.ru'
         default template_path: 'devise/mailer'
+
+        default bcc: Settings.mailer.admin_email
         default from: Settings.mailer.smtp.default.user_name
 
         def self.smtp_settings

@@ -1,5 +1,6 @@
 class UserRoomSocialnetworks < ActiveRecord::Migration
   def change
+      add_column :users, :login,     :string, default: ''
       add_column :users, :raw_about, :text
       add_column :users, :about,     :text
 
