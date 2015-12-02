@@ -4,7 +4,7 @@ module UserRoom
 
     included do
       layout 'user_room/layouts/base'
-      prepend_view_path "#{ UserRoom::Engine.root }/app/views/user_room"
+      prepend_view_path "app/views/user_room"
 
       include ::UserRoom::UserAvatarActions
 

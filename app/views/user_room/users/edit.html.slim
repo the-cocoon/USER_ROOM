@@ -15,7 +15,7 @@
 
   .ptz--theme-0
     .ptz--div-0.mt20.mb20
-      = form_for @user, html: { class: '' } do |f|
+      = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Основная информация
 
         .table.w100p
@@ -52,7 +52,7 @@
 
   .ptz--theme-0
     .ptz--div-0.mt20.mb20
-      = form_for @user, html: { class: '' } do |f|
+      = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Сменить пароль
 
         .clearfix.mb15
@@ -69,7 +69,7 @@
 
   .ptz--theme-0
     .ptz--div-0.mt20.mb20
-      = form_for @user, html: { class: '' } do |f|
+      = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Ваши контакты в социальных сетях
 
         .table.w100p
@@ -110,7 +110,7 @@
   - available_to_unlink = @user.credentials.count > 1
 
   .ptz--theme-0
-    .ptz--div-0.mb15
+    .ptz--div-0.mb15.p20
 
       h3.mb15.fs16.b Привязать учетную запись к социальной сети
 
