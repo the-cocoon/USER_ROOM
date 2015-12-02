@@ -10,10 +10,11 @@
   = render partial: 'notifications/form', locals: { object: @user, format: :json }
 
   h3.fs20 Редактирование профиля
-  = render partial: 'user_room/avatar/uploader', locals: { object: @user }
+
+  .mt20.mb20= render partial: 'user_room/avatar/uploader', locals: { object: @user }
 
   .ptz--theme-0
-    .ptz--div-0
+    .ptz--div-0.mt20.mb20
       = form_for @user, html: { class: '' } do |f|
         h3.mb15.fs16.b Основная информация
 
@@ -50,7 +51,7 @@
           = f.submit "Обновить профиль", class: 'ptz--btn ptz--size-14'
 
   .ptz--theme-0
-    .ptz--div-0
+    .ptz--div-0.mt20.mb20
       = form_for @user, html: { class: '' } do |f|
         h3.mb15.fs16.b Сменить пароль
 
@@ -67,8 +68,7 @@
           = f.submit "Сменить пароль", class: 'ptz--btn ptz--size-14'
 
   .ptz--theme-0
-    .ptz--div-0
-
+    .ptz--div-0.mt20.mb20
       = form_for @user, html: { class: '' } do |f|
         h3.mb15.fs16.b Ваши контакты в социальных сетях
 
