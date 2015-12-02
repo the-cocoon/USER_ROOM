@@ -43,6 +43,9 @@ BANNER
           when 'views'
             # rails g user_room:views views
             views_copy
+          when 'devise'
+            # rails g user_room:views devise
+            devise_copy
           when 'all'
             js_copy
             css_copy
@@ -65,6 +68,11 @@ BANNER
 
       def views_copy
         d1 = "app/views/user_room"
+        directory d1, d1
+      end
+
+      def devise_copy
+        d1 = "app/views/devise"
         directory d1, d1
       end
     end

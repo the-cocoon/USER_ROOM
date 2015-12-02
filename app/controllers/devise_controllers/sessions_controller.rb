@@ -1,5 +1,6 @@
 class DeviseControllers::SessionsController < Devise::SessionsController
   layout 'user_room/layouts/base'
+  prepend_view_path "app/views/user_room"
 
   def create_onetime_login_link
     _email  = params[:email].to_s.strip
