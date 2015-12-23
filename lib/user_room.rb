@@ -34,5 +34,13 @@ require 'user_room/version'
 module UserRoom
   class Engine < Rails::Engine
     config.autoload_paths << "#{ config.root }/app/mailers/concerns/"
+
+    # initializer :add_engine_view_paths do
+    #   ActiveSupport.on_load(:action_controller) do
+    #     views  = "app/views/user_room"
+    #     _root_ = ::UserRoom::Engine.config.root
+    #     prepend_view_path("#{ _root_ }/#{ views }" ) if respond_to?(:prepend_view_path)
+    #   end
+    # end
   end
 end

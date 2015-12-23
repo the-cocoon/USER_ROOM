@@ -2,6 +2,8 @@
   .mb15
     .fs13.b Мой профиль
 
-  .mb15= link_to "Мой кабинет",  cabinet_path, class: 'ptz--btn ptz--size-14'
+  - unless current_page? cabinet_path
+    .mb15= link_to "Мой кабинет",  cabinet_path, class: 'ptz--btn ptz--size-14'
+
   .mb15= link_to "Моя страница", @user, class: 'ptz--btn ptz--size-14'
   .mb15= link_to "Редактировать", [ :edit, @user ], class: 'ptz--btn ptz--size-14'

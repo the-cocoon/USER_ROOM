@@ -1,7 +1,5 @@
 class DeviseControllers::RegistrationsController < Devise::RegistrationsController
-  # respond_to :html, :json
-  layout 'user_room/layouts/base'
-  prepend_view_path "app/views/user_room"
+  layout 'user_room'
 
   before_filter :configure_sign_up_params, only: [:create]
 

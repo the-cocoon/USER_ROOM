@@ -6,7 +6,7 @@
 
 = render partial: 'notifications/flash', locals: { format: :json }
 
-= render partial: 'devise/sessions/social_login',       locals: { visible: true }
-= render partial: 'devise/sessions/email_singup',       locals: { visible: true }
-= render partial: 'devise/sessions/email_login',        locals: { visible: false }
-= render partial: 'devise/sessions/onetime_login_link', locals: { visible: false }
+.mt20.mb20= render partial: 'devise/sessions/social_login',       locals: { visible: true }
+.mt20.mb20= render partial: 'devise/sessions/email_singup',       locals: { visible: true }
+.mt20.mb20= render partial: 'devise/sessions/email_login',        locals: { visible: false }
+.mt20.mb20= render partial: 'devise/sessions/onetime_login_link', locals: { visible: false }

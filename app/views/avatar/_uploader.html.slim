@@ -1,0 +1,13 @@
+.ptz--theme-0
+  .ptz--div-0.p20
+    - if object.avatar.blank?
+      = form_for object, html: { enctype: 'multipart/form-data', class: 'ptz--theme-0--div-0' } do |f|
+        .mb15
+          .fs14.lh120.mb10 Загрузите главное изображение
+        .mb15
+          = f.file_field :avatar, class: 'ptz--input ptz--size-12'
+        div
+          = f.submit 'Загрузить', class: 'ptz--btn ptz--size-14'
+    - else
+      = render partial: 'user_room/avatar/toolbar', locals: { object: object }
+

@@ -21,8 +21,10 @@
 
   #= require ../social-login-btn
   #= require ./notifications
-  #= require ./user-room-header
-  #= require ./user-room--header-footer.css.sass
-
   #= require ./section-switcher
+
+  #= require application/layout/header
+  #= require application/layout/footer
+
+  #= require components/toastr/style
 */

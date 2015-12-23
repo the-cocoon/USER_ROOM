@@ -3,9 +3,7 @@ module UserRoom
     extend ActiveSupport::Concern
 
     included do
-      layout 'user_room/layouts/base'
-      prepend_view_path "app/views/user_room"
-
+      layout 'user_room'
       include ::UserRoom::UserAvatarActions
 
       before_action :set_user_var, only: %w[

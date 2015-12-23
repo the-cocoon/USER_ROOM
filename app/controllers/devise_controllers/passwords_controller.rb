@@ -1,6 +1,5 @@
 class DeviseControllers::PasswordsController < Devise::PasswordsController
-  layout 'user_room/layouts/base'
-  prepend_view_path 'app/views/user_room'
+  layout 'user_room'
 
   skip_before_filter :require_no_authentication, only: [:edit, :update]
 

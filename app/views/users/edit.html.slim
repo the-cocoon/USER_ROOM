@@ -1,10 +1,10 @@
 - content_for :title do
   | Редактировать профиль
 
-= render partial: 'user_room/users/header_footer'
+= render partial: 'users/header_footer'
 
 - content_for :left_sidebar do
-  = render partial: 'user_room/users/left_sidebar'
+  = render partial: 'users/left_sidebar'
 
 .m15
   = render partial: 'notifications/form', locals: { object: @user, format: :json }
