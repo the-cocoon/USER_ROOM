@@ -19,12 +19,12 @@
   #= require crop_tool/crop_tool
   #= require crop_tool/jcrop/jquery.Jcrop
 
-  #= require ../social-login-btn
-  #= require ./notifications
-  #= require ./section-switcher
+  #= require user_room/social-login-btn
+  #= require user_room/notifications
+  #= require user_room/section-switcher
 
-  #= require application/layout/header
-  #= require application/layout/footer
+  #= require app/layout/header
+  #= require app/layout/footer
 
   #= require components/toastr/style
 */
