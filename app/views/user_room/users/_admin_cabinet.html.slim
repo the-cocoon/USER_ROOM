@@ -3,36 +3,45 @@
 
 = render template: 'layouts/items/header_footer'
 
-- content_for :left_sidebar do
-  = render partial: 'users/left_sidebar'
-
-.m20
+.m20.ptz--theme-0
   .fs20.mb40 Кабинет Администратора
 
-  .fs16.mb20 Контент
+  - hubs_count = Hub.for_manage.count
+  - pubs_count = Post.for_manage.count + Page.for_manage.count
 
-  .mb40
-    .inline.mr15= link_to 'Разделы',    manage_hubs_path,  class: 'ptz--btn ptz--size-14'
-    .inline.mr15= link_to 'Публикации', manage_pubs_path, class: 'ptz--btn ptz--size-14'
+  - pc_count = ProductCategory.for_manage.count
+  - pr_cout  = Product.for_manage.count
+  - br_count = ProductBrand.for_manage.count
 
-  .fs16.mb20 Магазин
+  - ct_count = Cart.count
+  - or_count = Order.for_manage.count
 
-  .mb20
-    - cr_count = CurrencyRate.count
-    - br_count = ProductBrand.for_manage.count
-    .inline.mr15= link_to raw("Курсы валюты &mdash; #{ cr_count }"), manage_currency_rates_path, class: 'ptz--btn ptz--size-14'
-    .inline.mr15= link_to raw("Бренды &mdash; #{ br_count }"),            manage_product_brands_path,     class: 'ptz--btn ptz--size-14'
+  - cr_count = CurrencyRate.count
+  - dt_count = DeliveryType.for_manage.count
 
-  .mb20
-    - dt_count = DeliveryType.for_manage.count
-    - pc_count = ProductCategory.for_manage.count
-    - pr_cout  = Product.for_manage.count
-    .inline.mr15= link_to raw("Варианты доставки &mdash; #{ dt_count }"), manage_delivery_types_path,     class: 'ptz--btn ptz--size-14'
-    .inline.mr15= link_to raw("Категории товаров &mdash; #{ pc_count }"), manage_product_categories_path, class: 'ptz--btn ptz--size-14'
-    .inline.mr15= link_to raw("Товары  &mdash; #{ pr_cout } "),           manage_products_path,           class: 'ptz--btn ptz--size-14'
-
-  .mb20
-    - ct_count = Cart.count
-    - or_count = Order.for_manage.count
-    .inline.mr15= link_to raw("Корзины &mdash; #{ ct_count }"), manage_carts_path,  class: 'ptz--btn ptz--size-14'
-    .inline.mr15= link_to raw("Заказы &mdash; #{ or_count }"),  manage_orders_path, class: 'ptz--btn ptz--size-14'
+  .ptz--table.ptz--table-0.w100p
+    .ptz--thead.fs18
+      .ptz--tr
+        .ptz--th.p25 Мой Профиль
+        .ptz--th.p25 Контент
+        .ptz--th.p25 Товары
+        .ptz--th.p25 Заказы
+        .ptz--th.p25 Разное
+    .ptz--tbody
+      .ptz--tr
+        .ptz--td.p25
+          .mb15= link_to "Моя страница",  @user,            class: 'ptz--btn ptz--size-14'
+          .mb15= link_to "Редактировать", [ :edit, @user ], class: 'ptz--btn ptz--size-14'
+        .ptz--td.p25
+          .mb20 = link_to raw("Разделы &mdash; #{ hubs_count }"),    manage_hubs_path, class: 'ptz--btn ptz--size-14'
+          div   = link_to raw("Публикации &mdash; #{ pubs_count }"), manage_pubs_path, class: 'ptz--btn ptz--size-14'
+        .ptz--td.p25
+          .mb20 = link_to raw("Категории товаров &mdash; #{ pc_count }"), manage_product_categories_path, class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to raw("Товары &mdash; #{ pr_cout } "),            manage_products_path,           class: 'ptz--btn ptz--size-14'
+          div   = link_to raw("Бренды &mdash; #{ br_count }"),            manage_product_brands_path,     class: 'ptz--btn ptz--size-14'
+        .ptz--td.p25
+          .mb20 = link_to raw("Корзины &mdash; #{ ct_count }"), manage_carts_path,  class: 'ptz--btn ptz--size-14'
+          div   = link_to raw("Заказы &mdash; #{ or_count }"),  manage_orders_path, class: 'ptz--btn ptz--size-14'
+        .ptz--td.p25
+          .mb20 = link_to raw("Курсы валюты &mdash; #{ cr_count }"),      manage_currency_rates_path, class: 'ptz--btn ptz--size-14'
+          div   = link_to raw("Варианты доставки &mdash; #{ dt_count }"), manage_delivery_types_path, class: 'ptz--btn ptz--size-14'
