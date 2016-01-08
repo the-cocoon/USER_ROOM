@@ -44,3 +44,6 @@ module UserRoom
     end
   end
 end
+
+_root_ = File.expand_path('../../', __FILE__)
+require "#{ _root_ }/config/routes"
