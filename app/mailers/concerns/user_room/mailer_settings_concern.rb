@@ -5,7 +5,7 @@ module UserRoom
 
     included do
       def self.smtp?
-        Settings.mailer.service == 'smtp'
+        Settings.app.mailer.service == 'smtp'
       end
 
       # SomeMailer.test_mail.delivery_method.settings
@@ -13,11 +13,11 @@ module UserRoom
       if smtp?
         default template_path: 'devise/mailer'
 
-        default bcc: Settings.mailer.admin_email
-        default from: Settings.mailer.smtp.default.user_name
+        default bcc:  Settings.app.mailer.admin_email
+        default from: Settings.app.mailer.smtp.default.user_name
 
         def self.smtp_settings
-          Settings.mailer.smtp.default.to_h
+          Settings.app.mailer.smtp.default.to_h
         end
       end
     end
@@ -29,11 +29,11 @@ module UserRoom
     end
 
     def smtp?
-      Settings.mailer.service == 'smtp'
+      Settings.app.mailer.service == 'smtp'
     end
 
     def default_from
-      Settings.mailer.smtp.default.user_name if smtp?
+      Settings.app.mailer.smtp.default.user_name if smtp?
     end
   end
 end
