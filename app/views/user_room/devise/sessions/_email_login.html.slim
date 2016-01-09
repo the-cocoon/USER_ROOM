@@ -12,9 +12,9 @@
           span.fs16 У меня уже есть учетная запись
 
     .m15@registration-accordion--content(style=content_visible)
-      .table.w100p
-        .row
-          .cell.pl10
+      .ptz--table.w100p
+        .ptz--tr
+          .ptz--td.pl10
             p.mt0 У меня уже есть учетная запись
 
             = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -38,7 +38,7 @@
                 .pull-left.mr20.mb5
                   = f.submit "Войти", class: 'ptz--btn ptz--size-14 ptz--theme-0--btn w100'
 
-          .cell.w50p.pl30
+          .ptz--td.w50p.pl30
             p.mt0 Подсказка:
             p.fs14.mt0.mb10 &mdash; <span class='b'>Забыли пароль?</span> Запросите одноразовую ссылку для входа ниже.
             p.fs14.mt0.mb10 &mdash; После входа пароль можно сменить в личном кабинете

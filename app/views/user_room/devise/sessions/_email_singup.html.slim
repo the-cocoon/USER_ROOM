@@ -12,9 +12,9 @@
           span.fs16 Регистрация через электронную почту
 
     .m15@registration-accordion--content(style=content_visible)
-      .table.w100p
-        .row
-          .cell.pl10
+      .ptz--table.w100p
+        .ptz--tr
+          .ptz--td.pl10
             = form_tag create_email_registration_request_path do
               = hidden_field_tag(:callback_path, callback_path) if local_assigns[:callback_path]
 

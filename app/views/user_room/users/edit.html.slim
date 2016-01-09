@@ -18,9 +18,9 @@
       = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Основная информация
 
-        .table.w100p
-          .row
-            .cell.w50p
+        .ptz--table.w100p
+          .ptz--tr
+            .ptz--td.w50p
               .mb15
                 = f.label :username, "Имя пользователя", class: 'block fs14 lh120 mb5 '
                 = f.text_field :username, class: 'ptz--input w90p'
@@ -29,19 +29,19 @@
                 = f.label :login, "Логин", class: 'block fs14 lh120 mb5 '
                 = f.text_field :login, class: 'ptz--input w90p'
 
-            .cell
+            .ptz--td
               .mb15
                 = f.label :raw_about, "О себе", class: 'block fs14 lh120 mb5 '
                 = f.text_area :raw_about, class: 'ptz--textarea w400', rows: 5
 
-        .table.w100p
-          .row
-            .cell.w50p
+        .ptz--table.w100p
+          .ptz--tr
+            .ptz--td.w50p
 
               .mb15
                 = f.label :email, "Ваш email", class: 'block fs14 lh120 mb5 '
                 = f.text_field :email, class: 'ptz--input w90p'
-            .cell
+            .ptz--td
               - if @user.unconfirmed_email
                 .mb15
                   .block.fs14.lh120.mb10 Email ожидает подтверждения:
@@ -72,9 +72,9 @@
       = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Ваши контакты в социальных сетях
 
-        .table.w100p
-          .row
-            .cell.w50p
+        .ptz--table.w100p
+          .ptz--tr
+            .ptz--td.w50p
               .mb15
                 = f.label :vk_addr, "vk.com", class: 'block fs14 lh120 mb5 '
                 = f.text_field :vk_addr, class: 'ptz--input w90p'
@@ -90,7 +90,7 @@
               .mb15
                 = f.label :tw_addr, "twitter.com", class: 'block fs14 lh120 mb5 '
                 = f.text_field :tw_addr, class: 'ptz--input w90p'
-            .cell
+            .ptz--td
               .mb15
                 = f.label :ig_addr, "instagram.com", class: 'block fs14 lh120 mb5 '
                 = f.text_field :ig_addr, class: 'ptz--input w90p'
@@ -114,9 +114,9 @@
 
       h3.mb15.fs16.b Привязать учетную запись к социальной сети
 
-      .table.mt40.mb40
-        .row
-          .cell.w100.pr20.tac
+      .ptz--table.mt40.mb40
+        .ptz--tr
+          .ptz--td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'vkontakte'}.blank?
               = link_to '', user_omniauth_authorize_path(:vkontakte), class: 'social-login-btn social-login-btn--vk fa fa-vk', data: { role: 'social-login-btn' }, title: 'ВКонтакте'
             - else
@@ -129,7 +129,7 @@
 
             .fs11.mt5 ВКонтакте
 
-          .cell.w100.pr20.tac
+          .ptz--td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'odnoklassniki'}.blank?
               = link_to '', user_omniauth_authorize_path(:odnoklassniki), class: 'social-login-btn social-login-btn--ok fa fa-odnoklassniki', data: { role: 'social-login-btn', width: 650 },  title: 'Одноклассники'
             - else
@@ -142,7 +142,7 @@
 
             .fs11.mt5 Одноклассники
 
-          .cell.w100.pr20.tac
+          .ptz--td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'facebook'}.blank?
               = link_to '', user_omniauth_authorize_path(:facebook), class: 'social-login-btn social-login-btn--fb fa fa-facebook', data: { role: 'social-login-btn' }, title: 'Facebook'
             - else
@@ -155,7 +155,7 @@
 
             .fs11.mt5 Facebook
 
-          .cell.w100.pr20.tac
+          .ptz--td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'twitter'}.blank?
               = link_to '', user_omniauth_authorize_path(:twitter), class: 'social-login-btn social-login-btn--tw fa fa-twitter', data: { role: 'social-login-btn', height: 650 }, title: 'Twitter'
             - else
@@ -168,7 +168,7 @@
 
             .fs11.mt5 Twitter
 
-          .cell.w100.pr20.tac
+          .ptz--td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'google_oauth2'}.blank?
               = link_to '', user_omniauth_authorize_path(:google_oauth2), class: 'social-login-btn social-login-btn--gp fa fa-google-plus', data: { role: 'social-login-btn' }, title: 'Google+'
             - else

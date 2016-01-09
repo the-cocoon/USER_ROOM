@@ -12,9 +12,9 @@
           span.fs16 <b>ОЙ!</b> Я не помню пароль
 
     .m15@registration-accordion--content(style=content_visible)
-      .table.w100p
-        .row
-          .cell.pl10
+      .ptz--table.w100p
+        .ptz--tr
+          .ptz--td.pl10
             p.mt0 Я не помню пароль. Пришлите мне одноразовую ссылку для входа на сайт
 
             = form_tag create_onetime_login_link_path do
@@ -28,11 +28,11 @@
                   = text_field_tag :email, '', class: 'ptz--input ptz--size-14 w250'
                   = button_tag 'Получить ссылку', class: 'ptz--btn ptz--size-14 ptz--theme-0--btn ptz--btn--side-right'
 
-          .cell.w50p.pl30
+          .ptz--td.w50p.pl30
             p.mt0 Подсказка:
             p.fs14.mt0.mb10 &mdash; Если вы зарегестировны на сайте с помощью электронной почты, то на ваш адрес придет письмо с одноразовой ссылкой для входа на сайт.
             p.fs14.mt0.mb10 &mdash; Если письмо не пришло в считаные минуты, то не забудте проверить папку <b>СПАМ</b>. Иногда даже полезные письма туда попадают.
 
-    / .cell.pl0.pt10.pr10.w40
+    / .ptz--td.pl0.pt10.pr10.w40
     /   input#forgotten-password-on-always.radio-btn(type='checkbox' checked='checked' autocomplete='off')
     /   label(for='forgotten-password-on')

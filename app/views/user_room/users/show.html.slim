@@ -3,9 +3,9 @@
 
 = render partial: 'users/header_footer'
 
-.table
-  .row
-    .cell.p20
+.ptz--table
+  .ptz--tr
+    .ptz--td.p20
       .mb20
         - if @user.avatar.present?
           = image_tag @user.avatar.url(:v100x100), class: 'user-room-header--avatar-image'
@@ -14,11 +14,12 @@
 
       - if current_user && current_user == @user
         = link_to 'Редактировать', [:edit, @user], class: 'ptz--btn ptz--btn--size-s'
-    .cell.p20
+    .ptz--td.p20
       .mt20
         - if current_user.try(:admin?)
-          .mb20
-            = link_to 'Войти под этим пользователем', autologin_path(@user), method: :post, class: 'ptz--btn ptz--size-12'
+          - if current_user != @user
+            .mb20
+              = link_to 'Войти под этим пользователем', autologin_path(@user), method: :post, class: 'ptz--btn ptz--size-12'
 
         - if @user.username.present?
           .fs15.mb15

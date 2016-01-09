@@ -12,27 +12,27 @@
           span.fs16 Вход / Регистрация через социальную сеть
 
     .m15@registration-accordion--content(style=content_visible)
-      .table.w100p
-        .row
-          .cell.pl10
+      .ptz--table.w100p
+        .ptz--tr
+          .ptz--td.pl10
             p.mt0 Вход / Регистрация через социальные сети
             - callback_path = local_assigns[:callback_path]
 
-            .table.mt40.mb40.w100p
-              .row
-                .cell.pr40.tac
+            .ptz--table.mt40.mb40.w100p
+              .ptz--tr
+                .ptz--td.pr40.tac
                   = link_to '', user_omniauth_authorize_path(:vkontakte,     callback_path: callback_path), class: 'social-login-btn social-login-btn--vk fa fa-vk',            data: { role: 'social-login-btn' },              title: 'ВКонтакте'
                   .fs11.mt5 ВКонтакте
-                .cell.pr40.tac
+                .ptz--td.pr40.tac
                   = link_to '', user_omniauth_authorize_path(:odnoklassniki, callback_path: callback_path), class: 'social-login-btn social-login-btn--ok fa fa-odnoklassniki', data: { role: 'social-login-btn', width: 650 },  title: 'Одноклассники'
                   .fs11.mt5 Одноклассники
-                .cell.pr40.tac
+                .ptz--td.pr40.tac
                   = link_to '', user_omniauth_authorize_path(:facebook,      callback_path: callback_path), class: 'social-login-btn social-login-btn--fb fa fa-facebook',      data: { role: 'social-login-btn', height: 600 }, title: 'Facebook'
                   .fs11.mt5 Facebook
-                .cell.pr40.tac
+                .ptz--td.pr40.tac
                   = link_to '', user_omniauth_authorize_path(:twitter,       callback_path: callback_path), class: 'social-login-btn social-login-btn--tw fa fa-twitter',       data: { role: 'social-login-btn', height: 650 }, title: 'Твиттер'
                   .fs11.mt5 Twitter
-                .cell.pr40.tac
+                .ptz--td.pr40.tac
                   = link_to '', user_omniauth_authorize_path(:google_oauth2, callback_path: callback_path), class: 'social-login-btn social-login-btn--gp fa fa-google-plus',   data: { role: 'social-login-btn', height: 600 }, title: 'Google+'
                   .fs11.mt5 Google+
 
