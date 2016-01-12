@@ -25,8 +25,7 @@
   #= require user_room/section-switcher
   #= require user_room/user-room-header
 
-  #= require app/layout/header
-  #= require app/layout/footer
+  #= require app/common_styles
 
   #= require components/toastr/style
 */
