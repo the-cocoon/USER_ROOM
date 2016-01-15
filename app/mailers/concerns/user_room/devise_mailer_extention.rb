@@ -4,17 +4,7 @@ module UserRoom
     extend ActiveSupport::Concern
 
     included do
-      prepend_view_path 'app/views/user_room'
-      layout 'user_room/layouts/mailer'
-
       before_action :set_attachments!
-
-      # For default mailers
-      def headers_for(action, opts)
-        _headers = super
-        _headers[:template_path].unshift('devise/mailer')
-        _headers
-      end
 
       # Additional Mailers
       # id = OnetimeLoginLink.last.id
@@ -46,10 +36,12 @@ module UserRoom
       # DeviseMailer.new_user_created(user_id)
       def new_user_created(user_id)
         @user    = ::User.find(user_id)
-        @email   = ::Settings.mailer.admin_email
+        @email   = ::Settings.app.mailer.admin_email
         @subject = "#{ env_prefix }Зарегистрирован новый пользователь"
 
-        mail(to: @email, subject: @subject)
+        mail(
+          to: @email, subject: @subject
+        )
       end
 
       # def confirmation_instructions(record, token, opts={})
