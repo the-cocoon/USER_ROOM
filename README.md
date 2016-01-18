@@ -149,9 +149,9 @@ admin_require
 
 # 7
 
-app/views/user_room/layouts/items/header.html.slim
+app_view/views/user_room/layouts/items/header.html.slim
 
-app/views/user_room/layouts/items/footer.html.slim
+app_view/views/user_room/layouts/items/footer.html.slim
 
 # 8
 
@@ -186,8 +186,8 @@ oauth:
 `config/application.rb`
 
 ```rb
-config.autoload_paths += %W[ #{ config.root }/app/mailers/concerns/** ]
-config.action_mailer.preview_path = "#{ Rails.root }/app/mailers" if Rails.env.development?
+config.autoload_paths += %W[ #{ config.root }/app_view/mailers/concerns/** ]
+config.action_mailer.preview_path = "#{ Rails.root }/app_view/mailers" if Rails.env.development?
 
 # ======================================================
 # Mailer settings
@@ -248,7 +248,7 @@ mailer:
       port:    25
 ```
 
-`app/mailers/mailer_preview.rb`
+`app_view/mailers/mailer_preview.rb`
 
 ```rb
 # http://localhost:3000/rails/mailers
@@ -284,7 +284,7 @@ EmailRegistrationRequest.create
 OnetimeLoginLink.create
 ```
 
-`app/mailers/devise_mailer.rb`
+`app_view/mailers/devise_mailer.rb`
 
 ```
 class DeviseMailer < Devise::Mailer
@@ -307,7 +307,7 @@ class DeviseMailer < Devise::Mailer
 end
 ```
 
-`app/views/user_room/layouts/mailers/user_room.html.slim`
+`app_view/views/user_room/layouts/mailers/user_room.html.slim`
 
 ```rb
 = yield

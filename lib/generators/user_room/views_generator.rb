@@ -57,22 +57,22 @@ BANNER
       end
 
       def js_copy
-        d1 = "app/assets/javascripts"
+        d1 = "app_view/assets/javascripts"
         directory d1, d1
       end
 
       def css_copy
-        d1 = "app/assets/stylesheets"
+        d1 = "app_view/assets/stylesheets"
         directory d1, d1
       end
 
       def views_copy
-        d1 = "app/views/user_room"
+        d1 = "app_view/views/user_room"
         directory d1, d1
       end
 
       def devise_copy
-        d1 = "app/views/devise"
+        d1 = "app_view/views/devise"
         directory d1, d1
       end
     end
