@@ -7,4 +7,13 @@
 /pkg/
 /spec/reports/
 /tmp/
+*.bundle
+*.so
+*.o
+*.a
+mkmf.log
+
+# OS FILES
 .DS_Store
+.DS_Store?
+Thumbs.db
