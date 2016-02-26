@@ -28,7 +28,6 @@ require 'user_room/version'
 
   protozaur
   protozaur_theme
-  table_holy_grail_layout
 ].each { |gem_name| require gem_name }
 
 module UserRoom

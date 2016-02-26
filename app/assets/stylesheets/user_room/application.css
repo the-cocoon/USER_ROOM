@@ -15,8 +15,6 @@
 
   #= require notifications/vendors/toastr
 
-  #= require layouts/table-holy-grail/styles
-
   #= require crop_tool/crop_tool
   #= require crop_tool/jcrop/jquery.Jcrop
 

@@ -55,7 +55,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'protozaur'
   spec.add_dependency 'protozaur_theme'
-  spec.add_dependency 'table_holy_grail_layout'
   # ~ DEPENDENCIES
 
   spec.add_development_dependency "bundler", "~> 1.9"
