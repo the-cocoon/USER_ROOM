@@ -13,8 +13,6 @@
   #= require protozaur_theme/theme-0/buttons
   #= require protozaur_theme/theme-0/paginators
 
-  #= require notifications/vendors/toastr
-
   #= require crop_tool/crop_tool
   #= require crop_tool/jcrop/jquery.Jcrop
 
@@ -25,5 +23,6 @@
 
   #= require app_view/layout/common_styles
 
+  #= require notifications/vendors/toastr
   #= require components/toastr/style
 */

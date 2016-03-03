@@ -1,4 +1,5 @@
 require 'user_room/version'
+require 'user_room/config'
 
 %w[
   devise
