@@ -17,7 +17,12 @@ module UserRoom
         @email = reg_req.email
         @callback_path = callback_path
 
-        mail(to: @email, subject: @subject)
+        bcc  = Settings.app.mailer.admin_email
+        from = Settings.app.mailer.smtp.default.user_name
+        puts bcc
+        puts from
+
+        mail(to: @email, subject: @subject, from: from)
       end
 
       # id = OnetimeLoginLink.last.id
