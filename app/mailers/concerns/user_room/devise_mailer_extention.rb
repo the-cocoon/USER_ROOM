@@ -19,8 +19,6 @@ module UserRoom
 
         bcc  = Settings.app.mailer.admin_email
         from = Settings.app.mailer.smtp.default.user_name
-        puts bcc
-        puts from
 
         mail(to: @email, subject: @subject, from: from)
       end
