@@ -22,7 +22,8 @@ Devise.setup do |config|
       prompt:  'select_account',
       image_aspect_ratio: :square,
       image_size: 50,
-      display: 'popup'
+      display: 'popup',
+      skip_jwt: true
 
     config.omniauth :odnoklassniki,
       Settings.oauth.try(:odnoklassniki).try(:app_id),
