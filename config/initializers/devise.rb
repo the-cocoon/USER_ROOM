@@ -25,6 +25,7 @@ Devise.setup do |config|
       display: 'popup',
       skip_jwt: true
 
+    # http://eastflower.ru/auth/odnoklassniki/callback
     config.omniauth :odnoklassniki,
       Settings.oauth.try(:odnoklassniki).try(:app_id),
       Settings.oauth.try(:odnoklassniki).try(:app_secret),
