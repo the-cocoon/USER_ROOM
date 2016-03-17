@@ -4,8 +4,6 @@ module UserRoom
     extend ActiveSupport::Concern
 
     included do
-      before_action :set_attachments!
-
       # Additional Mailers
       # id = EmailRegistrationRequest.last.id
       # DeviseMailer.mail_registration_request(id, '').deliver_now
