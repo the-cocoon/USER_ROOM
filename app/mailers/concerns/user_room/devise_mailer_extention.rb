@@ -10,7 +10,7 @@ module UserRoom
       def mail_registration_request(id, callback_path = nil)
         reg_req  = ::EmailRegistrationRequest.find(id)
 
-        title = t(:subject, scope: [:app_view, :mailer, :mail_registration_request])
+        title    = t(:subject, scope: [:user_room, :mailer, :mail_registration_request])
         @subject = "#{ env_prefix }#{ title }"
 
         @uid   = reg_req.uid
@@ -25,7 +25,7 @@ module UserRoom
       def onetime_login_request(id, callback_path = nil)
         log_req  = ::OnetimeLoginLink.find(id)
 
-        title = t(:subject, scope: [:app_view, :mailer, :onetime_login_request])
+        title    = t(:subject, scope: [:user_room, :mailer, :onetime_login_request])
         @subject = "#{ env_prefix }#{ title }"
 
         @uid   = log_req.uid
@@ -37,24 +37,28 @@ module UserRoom
 
       # DeviseMailer.new_user_created(user_id)
       def new_user_created(user_id)
-        @user    = ::User.find(user_id)
-        @email   = ::Settings.app.mailer.admin_email
+        @user  = ::User.find(user_id)
+        @email = ::Settings.app.mailer.admin_email
 
-        title = t(:subject, scope: [:app_view, :mailer, :new_user_created])
+        title    = t(:subject, scope: [:user_room, :mailer, :new_user_created])
         @subject = "#{ env_prefix }#{ title }"
 
-        mail(
-          to: @email, subject: @subject
-        )
+        mail(to: @email, subject: @subject)
       end
 
-      # def confirmation_instructions(record, token, opts={})
-      #   super
-      # end
+      def confirmation_instructions(record, token, opts={})
+        title    = t(:subject, scope: [:user_room, :mailer, :confirmation_instructions])
+        @subject = "#{ env_prefix }#{ title }"
 
-      # def reset_password_instructions(record, token, opts={})
-      #   super
-      # end
+        super
+      end
+
+      def reset_password_instructions(record, token, opts={})
+        title    = t(:subject, scope: [:user_room, :mailer, :reset_password_instructions])
+        @subject = "#{ env_prefix }#{ title }"
+
+        super
+      end
     end
   end
 end
