@@ -45,6 +45,7 @@ content_for :title do
           .mb20 = link_to raw("Категории товаров &mdash; #{ pc_count }"), manage_shop_categories_path, class: 'ptz--btn ptz--size-14'
           .mb20 = link_to raw("Товары &mdash; #{ pr_cout } "),            manage_products_path,        class: 'ptz--btn ptz--size-14'
           .mb20 = link_to raw("Бренды &mdash; #{ br_count }"),            manage_shop_brands_path,     class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to 'Яндекс Маркет', yandex_market_path, class: 'ptz--btn ptz--size-14'
 
         .ptz--td.p25
           .mb20 = link_to raw("Корзины &mdash; #{ ct_count }"), manage_carts_path,  class: 'ptz--btn ptz--size-14'
