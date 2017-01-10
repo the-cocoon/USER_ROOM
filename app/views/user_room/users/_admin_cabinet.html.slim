@@ -1,140 +1,57 @@
-= render partial: 'user_room/users/header_footer'
+content_for :title do
+  | Кабинет Администратора APP
 
-- content_for :left_sidebar do
-  = render partial: 'user_room/users/left_sidebar'
+= render template: 'layouts/items/header_footer'
 
-.m15
+.m20.ptz--theme-0
   .fs20.mb40 Кабинет Администратора
 
-  .fs24.mb30.mt30.b Магазинчик Ани Нечаевой
+  ruby:
+    hubs_count = Hub.for_manage.count
+    pubs_count = Post.for_manage.count + Page.for_manage.count
+    com_count  = Comment.for_manage.count
 
-  .fs20.mb30 Товары:
+    pc_count = ShopCategory.for_manage.count
+    br_count = ShopBrand.for_manage.count
+    pr_cout  = Product.for_manage.count
 
-  .mb40
-    .mb20.fs14.clearfix
-      .pull-left
-        = link_to 'Категории товаров', manage_product_categories_url
+    ct_count = Cart.count
+    or_count = Order.for_manage.count
 
-    .mb20.fs14.clearfix
-      .pull-left
-        = link_to 'Список Товаров', manage_products_path
+    cr_count = CurrencyRate.count
+    dt_count = DeliveryType.for_manage.count
+    pub_tags_count = PubTag.for_manage.count
 
-      .pull-right
-        span.iblock.nobr.tar.mr20
-          | Черновики: #{ Product.draft.count }
-        span.iblock.nobr.tar.mr20
-          | Опубликовано: #{ Product.published.count }
-        span.iblock.nobr.tar
-          | Доступно: #{ Product.published.in_stock.count }
+  .ptz--table.ptz--table-0.w100p
+    .ptz--thead.fs18
+      .ptz--tr
+        .ptz--th.p25 Мой Профиль
+        .ptz--th.p25 Контент
+        .ptz--th.p25 Товары
+        .ptz--th.p25 Заказы
+        .ptz--th.p25 Разное
+    .ptz--tbody
+      .ptz--tr
+        .ptz--td.p25
+          .mb20 = link_to "Моя страница",  @user,            class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to "Редактировать", [ :edit, @user ], class: 'ptz--btn ptz--size-14'
 
+        .ptz--td.p25
+          .mb20 = link_to raw("Разделы &mdash; #{ hubs_count }"),    manage_hubs_path, class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to raw("Публикации &mdash; #{ pubs_count }"), manage_pubs_path, class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to raw("Теги &mdash; #{ pub_tags_count }"),   manage_pub_tags_path, class: 'ptz--btn ptz--size-14'
 
-  .fs20.mb30 Варианты Доставки:
+        .ptz--td.p25
+          .mb20 = link_to raw("Категории товаров &mdash; #{ pc_count }"), manage_shop_categories_path, class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to raw("Товары &mdash; #{ pr_cout } "),            manage_products_path,        class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to raw("Бренды &mdash; #{ br_count }"),            manage_shop_brands_path,     class: 'ptz--btn ptz--size-14'
+          / .mb20 = link_to 'Яндекс Маркет', yandex_market_path, class: 'ptz--btn ptz--size-14'
 
-  .mb40
-    .mb20.fs14.clearfix
-      .pull-left
-        = link_to 'Управлять вариантами доставки', manage_delivery_types_path
+        .ptz--td.p25
+          .mb20 = link_to raw("Корзины &mdash; #{ ct_count }"), manage_carts_path,  class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to raw("Заказы &mdash; #{ or_count }"),  manage_orders_path, class: 'ptz--btn ptz--size-14'
 
-  .fs20.mb30 Корзины:
-
-  .mb40
-    .mb20.fs14.clearfix
-      .pull-left
-        = link_to "Корзин в системе: #{ Cart.filled.count  }", manage_carts_path
-
-      .pull-right
-        span.iblock.nobr.tar.mr20
-          | Пустых: #{ Cart.empty.count }
-        span.iblock.nobr.tar
-          | Всего: #{ Cart.count }
-
-  .fs20.mb30 Заказы:
-
-  .mb40
-    .mb20.fs14
-      = link_to "На модерации: #{ Order.moderation.count }", manage_orders_path(state: :moderation)
-
-    .mb20.fs14
-      = link_to "Готовы к оплате: #{ Order.ready_to_payment.count }", manage_orders_path(state: :ready_to_payment)
-
-    .mb20.fs14
-      = link_to "Оплачены: #{ Order.paid.count }", manage_orders_path(state: :paid)
-
-    .mb20.fs14
-      = link_to "Отправлены: #{ Order.delivery.count }", manage_orders_path(state: :delivery)
-
-    .mb20.fs14
-      = link_to "Исполнены: #{ Order.completed.count }", manage_orders_path(state: :completed)
-
-    .mb20.fs14
-      = link_to "Отменены: #{ Order.refund.count }", manage_orders_path(state: :refund)
-
-  hr
-
-  .fs24.mb30.mt30.b Открытая Кухня Анны Нечаевой
-
-
-  .fs20.mb30 Создать:
-
-  .mb20
-    div
-      - %w[ recipes posts pages ].each do |model_name|
-        = link_to t(:new, scope: model_name), [:new, model_name.singularize], class: 'ptz--btn ptz--size-14 mb5 mr5'
-
-    div
-      - %w[ blogs interviews hots ].each do |model_name|
-        = link_to t(:new, scope: model_name), [:new, model_name.singularize], class: 'ptz--btn ptz--size-14 mb5 mr5'
-
-
-  .fs20.mb30 Мои публикации (управление):
-
-  .mb40
-    - %w[ recipes posts pages blogs interviews hots ].each do |model_name|
-      .mb20.fs14.clearfix
-        .pull-left
-          = link_to [:my, @user, model_name]do
-            = t("my_#{ model_name }", scope: [ :users, :cabinet ])
-
-        .pull-right
-          span.iblock.nobr.tar.mr20
-            | Черновики: #{ @user.send(model_name).with_state(:draft).count }
-          span.iblock.nobr.tar.w130
-            | Опубликовано: #{ @user.send(model_name).with_state(:published).count }
-
-  .fs20.mb30 Управление публикациями:
-
-  .mb40
-    - %w[ recipes posts pages blogs interviews hots ].each do |model_name|
-      .mb20.fs14.clearfix
-        .pull-left
-          = link_to [:manage, model_name]do
-            = t("#{ model_name }.manage")
-
-        .pull-right
-          span.iblock.nobr.tar.mr20
-            | Черновики: #{ model_name.classify.constantize.with_state(:draft).count }
-          span.iblock.nobr.tar.w130
-            | Опубликовано: #{ model_name.classify.constantize.with_state(:published).count }
-
-  .fs20.mb30 Разделы сайта:
-
-  .mb40
-    .fs14
-      = link_to 'Разделы сайта', manage_hubs_url
-
-  .fs20.mb30 Комментарии:
-
-  .mb40
-    .mb20.fs14.clearfix
-      .pull-left
-        = link_to 'Управлять', [:manage, :comments]
-
-      .pull-right
-        span.iblock.nobr.tar.mr20
-          | На модерации: #{ @user.draft_comcoms_count }
-
-        span.iblock.nobr.tar.mr20
-          | Написано к моим постам: #{ @user.comcoms.active.count }
-
-        span.iblock.nobr.tar
-          | Написано мной: #{ @user.my_comments.active.count }
+        .ptz--td.p25
+          .mb20 = link_to raw("Курсы валюты &mdash; #{ cr_count }"),      manage_currency_rates_path, class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to raw("Варианты доставки &mdash; #{ dt_count }"), manage_delivery_types_path, class: 'ptz--btn ptz--size-14'
+          .mb20 = link_to raw("Отзывы/Комментарии &mdash; #{ com_count }"), manage_comments_path, class: 'ptz--btn ptz--size-14'

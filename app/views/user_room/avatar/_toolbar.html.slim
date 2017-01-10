@@ -11,20 +11,15 @@ ruby:
     callback_handler: "AvatarCrop.crop_tool_callback"
   }
 
-= form_for object, html: { enctype: 'multipart/form-data', class: 'form-classic' } do |f|
+= form_for object, html: { enctype: 'multipart/form-data', class: 'ptz--theme-0--div-0' } do |f|
   .mb15.fs16.b Изменить аватар
-
-  = render partial: 'notifications/form', locals: { object: object, format: :json }
 
   .clearfix@main-image-manage-intro
     .pull-left
       .pull-left.mr10
         = image_tag object.avatar.url(:v100x100), data: { role: 'main-image--v1x1' }, data: { role: 'user-avatar--v1x1' }, class: 'w100'
-      .pull-left
-        / = link_to '#', method: :patch,  class: '' do
-        / label.btn.btn--size-m.mr50.pt5.pb5.pr10.pl10(for='')
-        /   .fa.fa-download.fs18
 
+      .pull-left
         = link_to jsvoid, class: 'ptz--btn ptz--size-14 mr15 pt5 pb5 pr10 pl10', data: crop_data_1x1 do
           .fa.fa-crop.fs18
 
@@ -35,5 +30,5 @@ ruby:
           .fa.fa-repeat.fs18
 
     .pull-right
-        = link_to [:avatar_delete, object], method: :delete, class: 'ptz--btn ptz--size-14 pt5 pb5 pr10 pl10'
-          .fa.fa-trash.fs18
+      = link_to [:avatar_delete, object], method: :delete, class: 'ptz--btn ptz--size-14 pt5 pb5 pr10 pl10'
+        .fa.fa-trash.fs18

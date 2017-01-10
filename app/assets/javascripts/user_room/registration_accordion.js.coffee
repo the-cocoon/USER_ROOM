@@ -10,11 +10,11 @@
         if holder.find('@registration-accordion--intro:visible').length
           # hide all
           holders = $('@registration-accordion').not(holder)
-          holders.addClass 'form-classic--lightgray-theme'
+          holders.addClass 'disable'
           holders.find('@registration-accordion--content').slideUp ->
             holders.find('@registration-accordion--intro').slideDown()
 
           # show that
-          holder.removeClass 'form-classic--lightgray-theme'
+          holder.removeClass 'disable'
           holder.find('@registration-accordion--intro').slideUp ->
             holder.find('@registration-accordion--content').slideDown()

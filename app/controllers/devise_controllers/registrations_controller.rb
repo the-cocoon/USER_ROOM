@@ -1,6 +1,6 @@
 class DeviseControllers::RegistrationsController < Devise::RegistrationsController
-  # respond_to :html, :json
-  layout 'user_room/layouts/base'
+  layout 'user_room'
+
   before_filter :configure_sign_up_params, only: [:create]
 
   def create_email_registration_request

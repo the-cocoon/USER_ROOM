@@ -36,23 +36,25 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'omniauth-odnoklassniki'
 
   spec.add_dependency 'slim'
-  spec.add_dependency 'haml'
-  spec.add_dependency 'rails_config'
+  spec.add_dependency 'config'
 
   spec.add_dependency 'pagination'
   spec.add_dependency 'simple_sort'
   spec.add_dependency 'to_slug_param'
+  spec.add_dependency 'premailer-rails'
 
   spec.add_dependency 'mini_magick'
   spec.add_dependency 'paperclip'
+
   spec.add_dependency 'image_tools'
   spec.add_dependency 'crop_tool'
 
   spec.add_dependency 'log_js'
   spec.add_dependency 'role_slim_js'
+  spec.add_dependency 'notifications'
+
   spec.add_dependency 'protozaur'
   spec.add_dependency 'protozaur_theme'
-  spec.add_dependency 'table_holy_grail_layout'
   # ~ DEPENDENCIES
 
   spec.add_development_dependency "bundler", "~> 1.9"

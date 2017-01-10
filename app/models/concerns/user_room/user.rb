@@ -20,6 +20,7 @@ module UserRoom
 
       include ::SimpleSort::Base
       include ::Pagination::Base
+      include ::Notifications::LocalizedErrors
 
       include ::UserRoom::UserAvatar
       include ::UserRoom::SocialNetworks::Login

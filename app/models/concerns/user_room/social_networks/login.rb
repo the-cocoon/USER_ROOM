@@ -40,6 +40,11 @@ module UserRoom
         end
       end # class_methods
 
+      def actual_email
+        return '' if email.match(/#{ oauth_default_email_domain }/mix)
+        email
+      end
+
       included do
         attr_accessor :oauth_data
 

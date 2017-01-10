@@ -3,19 +3,25 @@ module UserRoom
   module MailerSettingsConcern
     extend ActiveSupport::Concern
 
-    included do
-      def self.smtp?
-        Settings.mailer.service == 'smtp'
+    class_methods do
+      def smtp?
+        ['smtp', 'letter_opener'].include?(::Settings.app.mailer.service)
       end
+    end
 
-      # SomeMailer.test_mail.delivery_method.settings
+    # SomeMailer.test_mail.delivery_method.settings
+    #
+    included do
       if smtp?
-        default bcc: 'admin@open-cook.ru'
+        _mailer = ::Settings.app.mailer
+
+        default bcc:  _mailer.admin_email
+        default from: _mailer.smtp.default.user_name
+
         default template_path: 'devise/mailer'
-        default from: Settings.mailer.smtp.default.user_name
 
         def self.smtp_settings
-          Settings.mailer.smtp.default.to_h
+          ::Settings.app.mailer.smtp.default.to_h
         end
       end
     end
@@ -24,14 +30,6 @@ module UserRoom
 
     def env_prefix
       'DEV => ' if Rails.env.development?
-    end
-
-    def smtp?
-      Settings.mailer.service == 'smtp'
-    end
-
-    def default_from
-      Settings.mailer.smtp.default.user_name if smtp?
     end
   end
 end
