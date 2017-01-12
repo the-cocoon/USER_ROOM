@@ -13,110 +13,110 @@
 
   .mt20.mb20= render partial: 'user_room/avatar/uploader', locals: { object: @user }
 
-  .ptz--theme-0
-    .ptz--div-0.mt20.mb20
+  .ptz_theme-0
+    .ptz_div-0.mt20.mb20
       = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Основная информация
 
-        .ptz--table.w100p
-          .ptz--tr
-            .ptz--td.w50p
+        .ptz_table.w100p
+          .ptz_tr
+            .ptz_td.w50p
               .mb15
                 = f.label :username, "Имя пользователя", class: 'block fs14 lh120 mb5 '
-                = f.text_field :username, class: 'ptz--input w90p'
+                = f.text_field :username, class: 'ptz_input w90p'
 
               .mb15
                 = f.label :login, "Логин", class: 'block fs14 lh120 mb5 '
-                = f.text_field :login, class: 'ptz--input w90p'
+                = f.text_field :login, class: 'ptz_input w90p'
 
-            .ptz--td
+            .ptz_td
               .mb15
                 = f.label :raw_about, "О себе", class: 'block fs14 lh120 mb5 '
-                = f.text_area :raw_about, class: 'ptz--textarea w400', rows: 5
+                = f.text_area :raw_about, class: 'ptz_textarea w400', rows: 5
 
-        .ptz--table.w100p
-          .ptz--tr
-            .ptz--td.w50p
+        .ptz_table.w100p
+          .ptz_tr
+            .ptz_td.w50p
 
               .mb15
                 = f.label :email, "Ваш email", class: 'block fs14 lh120 mb5 '
-                = f.text_field :email, class: 'ptz--input w90p'
-            .ptz--td
+                = f.text_field :email, class: 'ptz_input w90p'
+            .ptz_td
               - if @user.unconfirmed_email
                 .mb15
                   .block.fs14.lh120.mb10 Email ожидает подтверждения:
                   .b.mt15.fs15= @user.unconfirmed_email
 
         .mt20
-          = f.submit "Обновить профиль", class: 'ptz--btn ptz--size-14'
+          = f.submit "Обновить профиль", class: 'ptz_btn ptz_size-14'
 
-  .ptz--theme-0
-    .ptz--div-0.mt20.mb20
+  .ptz_theme-0
+    .ptz_div-0.mt20.mb20
       = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Сменить пароль
 
         .clearfix.mb15
           .pull-left.mr25
             = f.label :password, "Пароль", class: 'block fs14 lh120 mb5 '
-            = f.text_field :password, class: 'ptz--input w200'
+            = f.text_field :password, class: 'ptz_input w200'
 
           .pull-left
             = f.label :password_confirmation, "Пароль еще раз", class: 'block fs14 lh120 mb5 '
-            = f.text_field :password_confirmation, class: 'ptz--input w200'
+            = f.text_field :password_confirmation, class: 'ptz_input w200'
 
         .mt20
-          = f.submit "Сменить пароль", class: 'ptz--btn ptz--size-14'
+          = f.submit "Сменить пароль", class: 'ptz_btn ptz_size-14'
 
-  .ptz--theme-0
-    .ptz--div-0.mt20.mb20
+  .ptz_theme-0
+    .ptz_div-0.mt20.mb20
       = form_for @user, html: { class: 'p20' } do |f|
         h3.mb15.fs16.b Ваши контакты в социальных сетях
 
-        .ptz--table.w100p
-          .ptz--tr
-            .ptz--td.w50p
+        .ptz_table.w100p
+          .ptz_tr
+            .ptz_td.w50p
               .mb15
                 = f.label :vk_addr, "vk.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :vk_addr, class: 'ptz--input w90p'
+                = f.text_field :vk_addr, class: 'ptz_input w90p'
 
               .mb15
                 = f.label :ok_addr, "odnoklassniki.ru", class: 'block fs14 lh120 mb5 '
-                = f.text_field :ok_addr, class: 'ptz--input w90p'
+                = f.text_field :ok_addr, class: 'ptz_input w90p'
 
               .mb15
                 = f.label :fb_addr, "facebook.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :fb_addr, class: 'ptz--input w90p'
+                = f.text_field :fb_addr, class: 'ptz_input w90p'
 
               .mb15
                 = f.label :tw_addr, "twitter.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :tw_addr, class: 'ptz--input w90p'
-            .ptz--td
+                = f.text_field :tw_addr, class: 'ptz_input w90p'
+            .ptz_td
               .mb15
                 = f.label :ig_addr, "instagram.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :ig_addr, class: 'ptz--input w90p'
+                = f.text_field :ig_addr, class: 'ptz_input w90p'
 
               .mb15
                 = f.label :gp_addr, "google plus", class: 'block fs14 lh120 mb5 '
-                = f.text_field :gp_addr, class: 'ptz--input w90p'
+                = f.text_field :gp_addr, class: 'ptz_input w90p'
 
               .mb15
                 = f.label :pt_addr, "pinterest.com", class: 'block fs14 lh120 mb5 '
-                = f.text_field :pt_addr, class: 'ptz--input w90p'
+                = f.text_field :pt_addr, class: 'ptz_input w90p'
 
         .mt20
-          = f.submit "Обновить контакты", class: 'ptz--btn ptz--size-14'
+          = f.submit "Обновить контакты", class: 'ptz_btn ptz_size-14'
 
   - credentials = @user.credentials
   - available_to_unlink = @user.credentials.count > 1
 
-  .ptz--theme-0
-    .ptz--div-0.mb15.p20
+  .ptz_theme-0
+    .ptz_div-0.mb15.p20
 
       h3.mb15.fs16.b Привязать учетную запись к социальной сети
 
-      .ptz--table.mt40.mb40
-        .ptz--tr
-          .ptz--td.w100.pr20.tac
+      .ptz_table.mt40.mb40
+        .ptz_tr
+          .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'vkontakte'}.blank?
               = link_to '', user_omniauth_authorize_path(:vkontakte), class: 'social-login-btn social-login-btn--vk fa fa-vk', data: { role: 'social-login-btn' }, title: 'ВКонтакте'
             - else
@@ -129,7 +129,7 @@
 
             .fs11.mt5 ВКонтакте
 
-          .ptz--td.w100.pr20.tac
+          .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'odnoklassniki'}.blank?
               = link_to '', user_omniauth_authorize_path(:odnoklassniki), class: 'social-login-btn social-login-btn--ok fa fa-odnoklassniki', data: { role: 'social-login-btn', width: 650 },  title: 'Одноклассники'
             - else
@@ -142,7 +142,7 @@
 
             .fs11.mt5 Одноклассники
 
-          .ptz--td.w100.pr20.tac
+          .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'facebook'}.blank?
               = link_to '', user_omniauth_authorize_path(:facebook), class: 'social-login-btn social-login-btn--fb fa fa-facebook', data: { role: 'social-login-btn' }, title: 'Facebook'
             - else
@@ -155,7 +155,7 @@
 
             .fs11.mt5 Facebook
 
-          .ptz--td.w100.pr20.tac
+          .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'twitter'}.blank?
               = link_to '', user_omniauth_authorize_path(:twitter), class: 'social-login-btn social-login-btn--tw fa fa-twitter', data: { role: 'social-login-btn', height: 650 }, title: 'Twitter'
             - else
@@ -168,7 +168,7 @@
 
             .fs11.mt5 Twitter
 
-          .ptz--td.w100.pr20.tac
+          .ptz_td.w100.pr20.tac
             - if credentials.select{|c| c.provider == 'google_oauth2'}.blank?
               = link_to '', user_omniauth_authorize_path(:google_oauth2), class: 'social-login-btn social-login-btn--gp fa fa-google-plus', data: { role: 'social-login-btn' }, title: 'Google+'
             - else

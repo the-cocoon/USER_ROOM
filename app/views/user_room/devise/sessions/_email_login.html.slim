@@ -2,8 +2,8 @@
 - content_visible = 'display:none' if !visible
 - visible_style   = 'disable'      if !visible
 
-.ptz--theme-0
-  .ptz--div-0@registration-accordion(class=visible_style)
+.ptz_theme-0
+  .ptz_div-0@registration-accordion(class=visible_style)
     .m15@registration-accordion--intro(style=intro_visible)
 
       @registration-accordion--switcher
@@ -12,9 +12,9 @@
           span.fs16 У меня уже есть учетная запись
 
     .m15@registration-accordion--content(style=content_visible)
-      .ptz--table.w100p
-        .ptz--tr
-          .ptz--td.pl10
+      .ptz_table.w100p
+        .ptz_tr
+          .ptz_td.pl10
             p.mt0 У меня уже есть учетная запись
 
             = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -22,11 +22,11 @@
               .mb15.clearfix
                 .pull-left.mr20.mb5
                   = f.label :email, 'Ваша электронная почта', class: 'block fs14 lh120 mb5 '
-                  = f.text_field :email, value: '', autofocus: true, class: 'ptz--input ptz--size-14 w250'
+                  = f.text_field :email, value: '', autofocus: true, class: 'ptz_input ptz_size-14 w250'
 
                 .pull-left.mr20.mb5
                   = f.label :password, 'Ваш пароль', class: 'block fs14 lh120 mb5 '
-                  = f.password_field :password, value: '', autocomplete: :off, class: 'ptz--input ptz--size-14 w250'
+                  = f.password_field :password, value: '', autocomplete: :off, class: 'ptz_input ptz_size-14 w250'
 
               .clearfix
                 - if devise_mapping.rememberable?
@@ -36,9 +36,9 @@
                     span.fs13 Запомнить меня
 
                 .pull-left.mr20.mb5
-                  = f.submit "Войти", class: 'ptz--btn ptz--size-14 ptz--theme-0--btn w100'
+                  = f.submit "Войти", class: 'ptz_btn ptz_size-14 ptz_theme-0--btn w100'
 
-          .ptz--td.w50p.pl30
+          .ptz_td.w50p.pl30
             p.mt0 Подсказка:
             p.fs14.mt0.mb10 &mdash; <span class='b'>Забыли пароль?</span> Запросите одноразовую ссылку для входа ниже.
             p.fs14.mt0.mb10 &mdash; После входа пароль можно сменить в личном кабинете

@@ -12,7 +12,7 @@
         a(name=:avatar)
         p= image_tag current_user.avatar.url(:medium), id: :avatar_medium
         p
-          = f.file_field :avatar, class: 'ptz--btn ptz--btn-default', style: 'display:inline'
+          = f.file_field :avatar, class: 'ptz_btn ptz_btn-default', style: 'display:inline'
           - if @user.avatar?
             ruby:
               crop_data_150_150 = {
@@ -25,9 +25,9 @@
               }
 
             '
-            = link_to "Изменить миниатюру", "#", class: "ptz--btn ptz--btn-success js_the_crop", data: crop_data_150_150
+            = link_to "Изменить миниатюру", "#", class: "ptz_btn ptz_btn-success js_the_crop", data: crop_data_150_150
             '
-            = link_to "Удалить миниатюру", user_avatar_delete_path(@user), method: :delete, class: "ptz--btn ptz--btn-danger"
+            = link_to "Удалить миниатюру", user_avatar_delete_path(@user), method: :delete, class: "ptz_btn ptz_btn-danger"
 
       .form-group
         = f.label :username, "Имя пользователя"
@@ -39,7 +39,7 @@
         = f.text_area :raw_about, class: 'form-control', style: 'height: 200px;'
 
       .form-group
-        = f.submit "Обновить профиль", class: 'ptz--btn ptz--btn-info'
+        = f.submit "Обновить профиль", class: 'ptz_btn ptz_btn-info'
 
 .panel.panel-default
   a(name=:social_networks)
@@ -76,7 +76,7 @@
         = f.text_field :gp_addr, class: 'form-control'
 
       .form-group
-        = f.submit "Обновить профиль", class: 'ptz--btn ptz--btn-info'
+        = f.submit "Обновить профиль", class: 'ptz_btn ptz_btn-info'
 
 .panel.panel-default
   .panel-heading
@@ -97,7 +97,7 @@
           = @user.unconfirmed_email
 
       .form-group
-        = f.submit "Сменить Email", class: 'ptz--btn ptz--btn-info'
+        = f.submit "Сменить Email", class: 'ptz_btn ptz_btn-info'
 
 .panel.panel-default
   .panel-heading
@@ -110,14 +110,14 @@
         = f.label :login, "Логин"
         = f.text_field :login, class: 'form-control'
       .form-group
-        = f.submit "Обновить профиль", class: 'ptz--btn ptz--btn-info', data: { confirm: "Я уверен, что хочу сменить Логин" }
+        = f.submit "Обновить профиль", class: 'ptz_btn ptz_btn-info', data: { confirm: "Я уверен, что хочу сменить Логин" }
 
 .panel.panel-default
   .panel-heading
     h3 Сменить пароль
   .panel-body
     p Инструкции по процессу смены пароля вам будут высланы на ваш текущий Email.
-    = link_to "Сменить пароль", user_change_password_path(@user), method: :patch, class: 'ptz--btn ptz--btn-warning'
+    = link_to "Сменить пароль", user_change_password_path(@user), method: :patch, class: 'ptz_btn ptz_btn-warning'
 
 - credentials = @user.credentials
 - if credentials.size < 5

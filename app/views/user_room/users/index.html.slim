@@ -4,7 +4,7 @@
 
   .fs20.mb40 Пользователи сайта (#{ @users_count })
 
-  table.ptz--table.w100p
+  table.ptz_table.w100p
     tbody
       tr.tal.fs15
         th.fwn.pb40 Аватарка
@@ -25,4 +25,4 @@
           td.fs15.pt25.pb25.vam= I18n.l(user.created_at, format: "%-d %B %Y")
 
     - if (paginator = paginate @users, views_prefix: 'protozaur_theme/paginator').present?
-      .ptz--theme-0.mt20.mb20= paginator
+      .ptz_theme-0.mt20.mb20= paginator
